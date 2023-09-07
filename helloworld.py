@@ -74,9 +74,12 @@ print (str[-3:])
 print (str[6:-3])
 
 # String lenght
-str = 'Hello world'
-count = len(str)
-print("String len "+ str + ": " + str(count))
+
+text = 'Hello world'
+count = len(text)
+print(count)
+
+
 
 # Search & replace
 str = 'Hello world'
@@ -85,12 +88,14 @@ print ("replace: " + newstr)
 
 # Search substring
 str = 'Hello world'
-print ("find(world): " + str.find('world'))
-print ("find(bye): " + str.find('Bye'))
+print (str.find('world'))
+
+print (str.find('Bye'))
+
 
 #
 str = 'Hello world'
-print ("split: " + str.split(' '))
+print (str.split(' '))
 
 #
 str_1 = '//Hello world//'
@@ -102,3 +107,36 @@ print("lstrip: " + new_str_2)
 
 new_str_3 = str_1.rstrip("/")
 print("rstrip: " + new_str_3)
+
+# isnumeric, lower, upper
+str = 'Hello world'
+print(str.isnumeric())
+print(str.lower())
+print(str.upper())
+
+# List
+numbers = [1, 2, 3, 4, 5]
+names = ['Marry', 'Peter']
+
+print (numbers[0])
+print (numbers[-3])
+print (names[1])
+
+#
+index = 1
+if index < len(names):
+    names[index]
+else:
+    print("a")
+
+#
+try:
+    names[index]
+except IndexError:
+    print("Lỗi")
+
+#
+mylist = ['a','b','c']
+print ('a' in mylist)
+
+print ('b' not in mylist)
