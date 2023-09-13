@@ -63,15 +63,15 @@ This is line 2
 This is line 3"""
 
 # 
-str = str1 + " " + str2
-print(str)
+string = str1 + " " + str2
+print(string)
 
 # Substring
-str = 'Hello world'
-print (str[0:4])
-print (str[:4])
-print (str[-3:])
-print (str[6:-3])
+string = 'Hello world'
+print (string[0:4])
+print (string[:4])
+print (string[-3:])
+print (string[6:-3])
 
 # String lenght
 
@@ -82,20 +82,20 @@ print(count)
 
 
 # Search & replace
-str = 'Hello world'
-newstr = str.replace('Hello','Bye')
+string = 'Hello world'
+newstr = string.replace('Hello','Bye')
 print ("replace: " + newstr)
 
 # Search substring
-str = 'Hello world'
-print (str.find('world'))
+string = 'Hello world'
+print (string.find('world'))
 
-print (str.find('Bye'))
+print (string.find('Bye'))
 
 
 #
-str = 'Hello world'
-print (str.split(' '))
+string = 'Hello world'
+print (string.split(' '))
 
 #
 str_1 = '//Hello world//'
@@ -109,10 +109,10 @@ new_str_3 = str_1.rstrip("/")
 print("rstrip: " + new_str_3)
 
 # isnumeric, lower, upper
-str = 'Hello world'
-print(str.isnumeric())
-print(str.lower())
-print(str.upper())
+string = 'Hello world'
+print(string.isnumeric())
+print(string.lower())
+print(string.upper())
 
 # List
 numbers = [1, 2, 3, 4, 5]
@@ -122,12 +122,14 @@ print (numbers[0])
 print (numbers[-3])
 print (names[1])
 
-#
-index = 1
+# Kiểm tra theo index
+index = 20
 if index < len(names):
-    names[index]
+    print(names[index])
 else:
-    print("a")
+    print("Index:" + str(index) + " > độ dài chuỗi: " + str(len(names)))
+
+
 
 #
 try:
@@ -140,3 +142,101 @@ mylist = ['a','b','c']
 print ('a' in mylist)
 
 print ('b' not in mylist)
+
+#Trích xuất chuỗi con
+numbers = ['a','b','c','d']
+print (numbers[:2])
+print (numbers[2:])
+#Xóa phần tử của mảng
+numbers = [1, 2, 3, 4, 5]
+del numbers[0]
+print (numbers)
+#Xóa một khoảng phần tử trong mảng
+numbers = [1, 2, 3, 4, 5, 6, 7]
+del numbers[2:4]
+print (numbers)
+#Nối 2 mảng
+a = [1, 2]
+b = [1, 3]
+print (a + b)
+#Thêm phần tử vào mảng
+numbers = [1, 2, 3]
+numbers.append(4)
+print (numbers)
+#Lấy phần tử cuối mảng
+numbers = [1, 2, 3]
+mynumber = numbers.pop()
+print (mynumber)
+print (numbers)
+#Tìm một giá trị trong mảng
+aList = [123,'xyz','zara','abc']
+print ("Index for xyz : ", aList.index('xyz'))
+print ("Index for zara : ", aList.index('zara'))
+#Đảo ngược giá trị trong mảng
+numbers = [1, 2, 3, 4]
+numbers.reverse()
+print (numbers)
+#Sắp xếp giá trị các phần tử
+#aList = [123,'xyz','zara','abc','xyz']
+#aList.sort()
+#print ("List : ", aList)
+#Tuple
+mytuple = ('x','y','z')
+print (mytuple)
+#Dictionary
+point = {'x': 3, 'y': 6, 'z': 9}
+print(point['x'])
+#Thêm một phần tử
+user = {'name': 'Jone','age': 30}
+user['country'] = 'Vietnam'
+print (user)
+#Một số hàm và phương thức thông dụng
+#dict.clear(): Xóa toàn bộ dữ liệu bên trong đối tượng
+#dict.copy(): Trả về một bản copy của đối tượng
+#dict.formkeys(seq[, value]):
+#dict.has_key(key): Kiểm tra một key có tồn tại trong đối tượng hay không
+#dict.value(): Trả về một List chứa các value
+
+#Phân chia module
+#Các loại module
+#1. Viết bằng python: phần mở rộng (.py)
+#2. Các thư viên liên động: mở rồng (.dll .pyd .so .sl),...
+#3. C-module liên kết với trình phiên dịch
+
+#Đường dẫn để tìm load module
+#mport math
+#math.__file__
+
+#import random
+#random.__file__
+#Cách khai báo và sử dụng module
+import mymath
+num1 = 1
+num2 = 2
+print("Tong cua 2 so la: " + str(mymath.cong(num1,num2)))
+#Class
+class animal():
+    name = ''
+    age = 0
+    def __init__(self, name = '', age = 0):
+        self.name = name
+        self.age = age
+    def show(self):
+        print ('My name is ', self.name)
+    def run(self):
+        print ('Animal is running...')
+    def go(self):
+        print ('Animal is going...')
+class dog(animal):
+    def run(self):
+        print ('Dog is running...')
+myanimal = animal()
+myanimal.show()
+myanimal.run()
+myanimal.go()
+mydog = dog('Lucy')
+mydog.show()
+mydog.run()
+mydog.go()
+
+#Tập tin(File)
