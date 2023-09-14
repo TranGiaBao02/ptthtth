@@ -240,3 +240,65 @@ mydog.run()
 mydog.go()
 
 #Tập tin(File)
+#Mở file
+f1 = open('test.txt','w')
+#Đọc nội dung từ file
+f1 = open('test.txt','r')
+data = f1.read()
+
+f2 = open('log.txt','r')
+buffdata = f2.read(1024)
+
+#Ghi nội dung file
+f2 = open('access_log','a+')
+f2.write('Attack detected')
+f1.close()
+f2.close()
+#Đổi tên file
+import os
+os.rename('test.txt','test_new.txt')
+#Xóa file
+import os
+os.remove('test.txt')
+#Thư mục
+#Tạo thư mục
+import os
+os.mkdir('test')
+#Xóa thư mục
+import os
+os.rmdir('test')
+#Đọc nội dung thư mục
+import os
+allfiles = os.listdir('/root/downloads')
+print (allfiles)
+#Module 'os'
+
+#Cài đặt PIL
+#Mở file
+from PIL import Image
+im = Image.open("photo.jpg")
+#Ghi file
+im.save('photo_new.jpg','JPEG')
+#Tạo thumbnail
+from PIL import Image
+im = Image.open('photo.jpg')
+im.thumbnail((100, 100))
+im.save('photo_thumbnail.jpg','JPEG')
+#File Json
+#Load file từ internet
+import urllib2
+import json
+response = urllib2.urlopen('https://api.github.com/users/voduytuan/repos')
+data = json.load(response)
+print (data)
+#Parsing Json data
+import json
+mystring = '{"a":1,"b":2,"c":3,"d":4,"e":5}'
+data = json.loads(mystring)
+print (data)
+#Enconding Json data
+import json
+mydata = {'name': 'John','age': 10}
+jsonstring = json.dumps(mydata)
+print (jsonstring)
+
